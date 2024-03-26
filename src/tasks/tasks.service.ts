@@ -10,8 +10,14 @@ export class TasksService {
 
   //Return all tasks
   getAllTasks(): Task[] {
-    //
+    // return the tasks array
     return this.tasks;
+  }
+
+  //Return a task by id
+  getTaskById(id: string): Task {
+    // find the task with the id that matches the id passed in and return it
+    return this.tasks.find((task) => task.id === id);
   }
 
   //Create a new task and add it to the tasks array
