@@ -15,8 +15,8 @@ export class TasksService {
   }
 
   //Create a new task and add it to the tasks array
-  // takes in a title and description and returns the created task
   createTask(createTaskDto: CreateTaskDto): Task {
+    // extract the title and description from the createTaskDto
     const { title, description } = createTaskDto;
     const task: Task = {
       // generate a unique id for the task

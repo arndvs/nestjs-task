@@ -19,6 +19,8 @@ export class TasksController {
     return this.tasksService.createTask(createTaskDto);
   }
 }
+
+// moved to DTO rather than passing in title and description separately
 //   createTask(
 //     // The @Body() decorator is used to extract the title and description from the request body
 //     @Body('title') title: string,
