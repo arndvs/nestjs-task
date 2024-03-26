@@ -20,6 +20,12 @@ export class TasksService {
     return this.tasks.find((task) => task.id === id);
   }
 
+  //Delete a task by id
+  // delete the task with the id that matches the id passed in and return it
+  deleteTask(id: string): void {
+    this.tasks = this.tasks.filter((task) => task.id !== id);
+  }
+
   //Create a new task and add it to the tasks array
   createTask(createTaskDto: CreateTaskDto): Task {
     // extract the title and description from the createTaskDto
