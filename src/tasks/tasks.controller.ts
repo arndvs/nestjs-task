@@ -13,7 +13,9 @@ export class TasksController {
     return this.tasksService.getAllTasks();
   }
 
+  // get decorator with a url parameter of id
   @Get('/:id')
+  // Get a task by id
   getTaskById(@Param('id') id: string): Task {
     return this.tasksService.getTaskById(id);
   }
