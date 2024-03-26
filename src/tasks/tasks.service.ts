@@ -19,13 +19,6 @@ export class TasksService {
     // find the task with the id that matches the id passed in and return it
     return this.tasks.find((task) => task.id === id);
   }
-
-  //Delete a task by id
-  // delete the task with the id that matches the id passed in and return it
-  deleteTask(id: string): void {
-    this.tasks = this.tasks.filter((task) => task.id !== id);
-  }
-
   //Create a new task and add it to the tasks array
   createTask(createTaskDto: CreateTaskDto): Task {
     // extract the title and description from the createTaskDto
@@ -42,6 +35,18 @@ export class TasksService {
 
     // add the created task to the tasks array
     this.tasks.push(task);
+    return task;
+  }
+
+  //Delete a task by id
+  // delete the task with the id that matches the id passed in and return it
+  deleteTask(id: string): void {
+    this.tasks = this.tasks.filter((task) => task.id !== id);
+  }
+
+  updateTaskStatus(id: string, status: TaskStatus) {
+    const task = this.getTaskById(id);
+    task.status = status;
     return task;
   }
 }
